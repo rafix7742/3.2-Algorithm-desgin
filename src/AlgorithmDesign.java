@@ -136,12 +136,14 @@ public class AlgorithmDesign extends javax.swing.JFrame {
                                 .addComponent(Primelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(GUIBackgroundLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(GUIBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Fiblbl, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(GUIBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(GUIBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GUIBackgroundLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Fiblbl, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         GUIBackgroundLayout.setVerticalGroup(
@@ -291,6 +293,10 @@ public class AlgorithmDesign extends javax.swing.JFrame {
        //String UsrFibstr = FactTxt.getText();
        //int i = Integer.parseInt(UsrFibstr);
        int UsrNumFib =  Integer.parseInt(FibTxt.getText());
+       if(UsrNumFib>4250000){
+           Fiblbl.setText(String.valueOf("Numbers larger than 4250000 cause the program to crash,please try a smaller number"));
+           
+       }else{
         if(UsrNumFib>60){
             
         BigInteger val = fibonacci(UsrNumFib);
@@ -308,7 +314,7 @@ public class AlgorithmDesign extends javax.swing.JFrame {
         }
         
         
-        }
+        }}
         catch(NumberFormatException e ){
             Fiblbl.setText(String.valueOf("Please enter a valid number"));
         }
